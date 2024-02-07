@@ -3,7 +3,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const authRoutes = require("./routes/userRoutes");
 const messageRoutes = require("./routes/messageRoutes");
-const path = require('path');
+
 
 const app = express();
 const socket = require("socket.io");
@@ -48,8 +48,3 @@ io.on("connection", (socket) => {
         }
     });
 });
-//static files
-app.use(express.static(path.join(__dirname, "./client/build")))
-app.get("*", function (req, res) {
-    res.sendFile(path.join(__dirname, "./client/build/index.html"))
-})
