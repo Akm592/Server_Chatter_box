@@ -1,4 +1,4 @@
-const User = require("../model/usermodel"); 
+import UserModel from '../model/usermodel';
 const bcrypt = require("bcrypt");
 
 module.exports.login = async (req, res, next) => {
